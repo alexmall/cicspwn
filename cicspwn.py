@@ -16,7 +16,7 @@ from time import sleep
 import threading
 
 import py3270
-from py3270 import Emulator,CommandError,FieldTruncateError,TerminatedError,WaitError,KeyboardStateError,FieldTruncateError,x3270App,s3270App
+from py3270 import Emulator,CommandError,FieldTruncateError,TerminatedError,WaitError,KeyboardStateError,FieldTruncateError,X3270App,S3270App
 
 
 ####################################################################################
@@ -2486,15 +2486,15 @@ if __name__ == "__main__" :
         # Set the emulator intelligently based on your platform
     if platform.system() == 'Darwin':
       class WrappedEmulator(EmulatorIntermediate):
-        x3270App.executable = 'x3270'
-        s3270App.executable = 's3270'
+        X3270App.executable = 'x3270'
+        S3270App.executable = 's3270'
     elif platform.system() == 'Linux':
       class WrappedEmulator(EmulatorIntermediate):
-        x3270App.executable = 'x3270'
-        s3270App.executable = 's3270'
+        X3270App.executable = 'x3270'
+        S3270App.executable = 's3270'
     elif platform.system() == 'Windows':
       class WrappedEmulator(EmulatorIntermediate):
-        x3270App.executable = 'wc3270.exe'
+        X3270App.executable = 'wc3270.exe'
     else:
       whine('Your Platform:' + platform.system() + 'is not supported at this time.',kind='err')
       sys.exit(1)    
